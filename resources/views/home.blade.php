@@ -48,6 +48,12 @@
             <a href="/movies">
                 <h3>Tous les films</h1>
             </a>
+            <a href="/movies?order_by=startYear&order=desc">
+                <h3>Les films les plus récents</h1>
+            </a>
+            <a href="/movies?order_by=averageRating&order=desc">
+                <h3>Les films les mieux notés</h1>
+            </a>
         </div>
 
         <div class="wrapper">
