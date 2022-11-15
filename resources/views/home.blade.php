@@ -22,6 +22,22 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
         }
+
+        a {
+            text-decoration: none;
+        }
+
+        h3 {
+            border-radius: 10px;
+            background-color: #F9AD67;
+            width: 40%;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            margin-left: auto;
+            margin-right: auto;
+            color: black;
+            text-align: center;
+        }
     </style>
 </head>
 

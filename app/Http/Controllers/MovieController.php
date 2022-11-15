@@ -16,8 +16,8 @@ class MovieController extends Controller
 
     public function list()
     {
-        $movies = Movie::limit(20)->get();
+        $movies_paginator = Movie::paginate(20);
 
-        return view('movies_list', ['movies' => $movies]);
+        return view('movies_list', ['movies_paginator' => $movies_paginator]);
     }
 }
