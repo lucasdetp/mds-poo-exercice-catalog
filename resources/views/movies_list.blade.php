@@ -25,6 +25,14 @@
             <button onclick="history.back()">Retour</button>
         </div>
 
+        <div style="margin-bottom: 2rem;">
+            <strong>Genres: </strong>
+            @foreach ($genres as $genre)
+            <a href="/movies?genre={{ $genre->label }}">{{ $genre->label }}</a>
+            {{ $loop->last ? "" : "," }}
+            @endforeach
+        </div>
+
         <div>
             <table>
                 @foreach ($movies_paginator as $movie)

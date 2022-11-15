@@ -40,6 +40,16 @@
             <tr>
                 <th>Titre</th>
                 <td>{{ $movie->primaryTitle }} ({{ $movie->originalTitle }})</td>
+            </tr>
+            <tr>
+                <th>Genres</th>
+                <td>
+                    @foreach ($movie->genres as $genre)
+                    <a href="/movies?genre={{ $genre->label }}">{{ $genre->label }}</a>
+                    {{ $loop->last ? "" : "," }}
+                    @endforeach
+                </td>
+            </tr>
             <tr>
                 <th>Année de sortie :</th>
                 <td>{{ $movie->startYear }}</td>
