@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,9 +24,15 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>{{ config('app.name') }}</h1>
+        <div>
+            <a href="/movies">
+                <h3>Tous les films</h1>
+            </a>
+        </div>
 
         <div class="wrapper">
             @foreach ($movies as $movie)
@@ -38,4 +45,5 @@
         </div>
     </div>
 </body>
+
 </html>
