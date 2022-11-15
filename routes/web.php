@@ -2,6 +2,7 @@
 
 use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,6 @@ Route::get('/', function () {
 
     return view('home', ['movies' => $movies]);
 });
+
+
+Route::get('/movies/{id}', [MovieController::class, 'show']);
