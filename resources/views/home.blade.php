@@ -46,13 +46,16 @@
         <h1>{{ config('app.name') }}</h1>
         <div>
             <a href="/movies">
-                <h3>Tous les films</h1>
+                <h3>Tous les films</h3>
             </a>
             <a href="/movies?order_by=startYear&order=desc">
-                <h3>Les films les plus récents</h1>
+                <h3>Les films les plus récents</h3>
             </a>
             <a href="/movies?order_by=averageRating&order=desc">
-                <h3>Les films les mieux notés</h1>
+                <h3>Les films les mieux notés</h3>
+            </a>
+            <a href="/movies/random">
+                <h3>Film aléatoire</h3>
             </a>
         </div>
 

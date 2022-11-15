@@ -18,6 +18,10 @@
             text-align: left;
             min-width: 4rem;
         }
+
+        p {
+            text-align: justify;
+        }
     </style>
 </head>
 
