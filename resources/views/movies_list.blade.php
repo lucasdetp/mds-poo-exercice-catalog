@@ -8,9 +8,27 @@
     <title>Movies</title>
 
     <style>
+        @import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
+
+        * {
+            font-family: Poppins, sans-serif;
+            background-color: black;
+        }
+
+        button {
+            color: #fff;
+            cursor: pointer;
+            border: 2px solid white;
+            padding: 5px 5px;
+        }
+
         .container {
             width: 1000px;
             margin: auto;
+        }
+
+        td {
+            color: #fff;
         }
 
         .list_image {
@@ -25,10 +43,10 @@
             <button onclick="history.back()">Retour</button>
         </div>
 
-        <div style="margin-bottom: 2rem;">
+        <div style="margin-bottom: 2rem; color:#fff">
             <strong>Genres: </strong>
             @foreach ($genres as $genre)
-            <a href="/movies?genre={{ $genre->label }}">{{ $genre->label }}</a>
+            <a style="color:#fff; text-decoration: none;" href="/movies?genre={{ $genre->label }}">{{ $genre->label }}</a>
             {{ $loop->last ? "" : "," }}
             @endforeach
         </div>
@@ -41,7 +59,7 @@
                         <img class="list_image" src="{{ $movie->poster }}" alt="{{ $movie->primaryTitle }}">
                     </td>
                     <td>
-                        <a style="text-decoration: none" href="/movies/{{ $movie->id }}">
+                        <a style="text-decoration: none; color:#fff;" href="/movies/{{ $movie->id }}">
                             {{ $movie->originalTitle }}
                         </a>
                     </td>
@@ -50,9 +68,9 @@
                 @endforeach
             </table>
         </div>
-        <div>
+        <div">
             {{ $movies_paginator->links('paginator') }}
-        </div>
+    </div>
     </div>
 </body>
 

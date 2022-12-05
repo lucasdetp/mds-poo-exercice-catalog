@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\GenreController;
-use App\Models\Movie;
-use App\Models\Genre;
 use App\Http\Controllers\SeriesController;
-use Illuminate\Support\Facades\Route;
-use App\Models\Series;
 use App\Http\Controllers\MovieController;
+use App\Models\Genre;
+use App\Models\Movie;
+use App\Models\Series;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------

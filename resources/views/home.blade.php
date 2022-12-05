@@ -13,6 +13,13 @@
 
     <!-- Styles -->
     <style>
+        @import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
+
+        * {
+            background-color: black;
+            font-family: Poppins, sans-serif;
+        }
+
         .container {
             margin: auto;
             max-width: 1000px;
@@ -31,9 +38,35 @@
             height: 300px;
         }
 
-        a {
+        .movies-a {
+            margin-bottom: 20px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .movies-a a {
+            font-size: 1.2rem;
+            position: relative;
+            text-align: center;
+            margin: 10px;
+            color: #fff;
             text-decoration: none;
-            margin-left: 30px;
+        }
+
+        .movies-a a::after {
+            content: "";
+            background: white;
+            mix-blend-mode: exclusion;
+            width: calc(100% + 20px);
+            height: 0;
+            position: absolute;
+            bottom: -4px;
+            left: -10px;
+            transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        }
+
+        .movies-a a:hover::after {
+            height: calc(100% + 8px)
         }
 
         h3 {
@@ -43,8 +76,12 @@
             padding-bottom: 2px;
             margin-left: auto;
             margin-right: auto;
-            color: black;
+            color: white;
             text-align: center;
+        }
+
+        h1 {
+            color: #fff;
         }
     </style>
 </head>
@@ -54,8 +91,7 @@
         <h1>{{ config('app.name') }}</h1>
         <div>
             <h3>Films</h3>
-
-            <div>
+            <div class="movies-a">
                 <a href="/movies">
                     Tous les films
                 </a>
@@ -81,7 +117,7 @@
 
             <div>
                 <h3>Séries</h3>
-                <div>
+                <div class="movies-a">
                     <a href="/series">
                         Toutes les séries
                     </a>

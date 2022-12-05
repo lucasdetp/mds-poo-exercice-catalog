@@ -8,6 +8,13 @@
     <title>{{ $series_item->originalTitle }}</title>
 
     <style>
+        @import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
+
+        * {
+            font-family: Poppins, sans-serif;
+            background-color: black;
+        }
+
         .container {
             width: 1000px;
             margin: auto;
@@ -17,10 +24,44 @@
             font: bold;
             text-align: left;
             min-width: 4rem;
+            color: #fff;
+        }
+
+        td {
+            color: #fff;
+        }
+
+        td a {
+            text-decoration: none;
+            color: #fff;
         }
 
         p {
             text-align: justify;
+            color: #fff;
+        }
+
+        h2 {
+            color: #fff;
+        }
+
+        h3 {
+            color: #fff;
+        }
+
+        button {
+            color: #fff;
+            cursor: pointer;
+            border: 2px solid white;
+            padding: 5px 5px;
+        }
+
+        .titre {
+            display: flex;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #fff;
         }
     </style>
 </head>
@@ -32,6 +73,9 @@
         </div>
 
         <div>
+            <div class="titre">
+                <td>{{ $series_item->primaryTitle }} ({{ $series_item->originalTitle }})</td>
+            </div>
             <img src="{{ $series_item->poster }}" alt="{{ $series_item->originalTitle }}">
         </div>
 
@@ -67,7 +111,7 @@
         <p>
             {{ $series_item->plot }}
         </p>
-        <h3>Episodes</h3>
+
         <p>
             @foreach ($series_item->seasons() as $seasonNumber => $episodes)
         <h3>Saison {{ $seasonNumber }}</h3>

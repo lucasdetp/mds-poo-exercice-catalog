@@ -8,6 +8,24 @@
     <title>Séries</title>
 
     <style>
+        @import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
+
+        * {
+            font-family: Poppins, sans-serif;
+            background-color: black;
+        }
+
+        button {
+            color: #fff;
+            cursor: pointer;
+            border: 2px solid white;
+            padding: 5px 5px;
+        }
+
+        td {
+            color: #fff;
+        }
+
         .container {
             width: 1000px;
             margin: auto;
@@ -25,10 +43,10 @@
             <button onclick="history.back()">Retour</button>
         </div>
 
-        <div style="margin-bottom: 2rem;">
+        <div style="margin-bottom: 2rem; color:#fff">
             <strong>Genres: </strong>
             @foreach ($genres as $genre)
-            <a href="/series?genre={{ $genre->label }}">{{ $genre->label }}</a>
+            <a style="color:#fff; text-decoration: none;" href="/series?genre={{ $genre->label }}">{{ $genre->label }}</a>
             {{ $loop->last ? "" : "," }}
             @endforeach
         </div>
@@ -41,7 +59,7 @@
                         <img class="list_image" src="{{ $series_item->poster }}" alt="{{ $series_item->primaryTitle }}">
                     </td>
                     <td>
-                        <a style="text-decoration: none" href="/series/{{ $series_item->id }}">
+                        <a style="color:#fff; text-decoration: none;" href="/series/{{ $series_item->id }}">
                             {{ $series_item->originalTitle }}
                         </a>
                     </td>
