@@ -15,22 +15,37 @@
     <style>
         .container {
             margin: auto;
-            max-width: 900px;
+            max-width: 1000px;
         }
 
         .wrapper {
+            margin: auto;
+            width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        .poster {
+            object-fit: cover;
+            width: 200px;
+            height: 300px;
         }
 
         a {
             text-decoration: none;
+            margin-left: 30px;
+            text-align: center;
+
+
+            width: 40%;
+            padding-top: 2px;
+            padding-bottom: 0px;
+
         }
 
         h3 {
-            border-radius: 10px;
-            background-color: #F9AD67;
-            width: 40%;
+            border: 2px solid #F9AD67;
+            width: 20%;
             padding-top: 2px;
             padding-bottom: 2px;
             margin-left: auto;
@@ -45,25 +60,53 @@
     <div class="container">
         <h1>{{ config('app.name') }}</h1>
         <div>
-            <a href="/movies">
-                <h3>Tous les films</h3>
-            </a>
-            <a href="/movies?order_by=startYear&order=desc">
-                <h3>Les films les plus récents</h3>
-            </a>
-            <a href="/movies?order_by=averageRating&order=desc">
-                <h3>Les films les mieux notés</h3>
-            </a>
-            <a href="/movies/random">
-                <h3>Film aléatoire</h3>
-            </a>
+            <h3>Films</h3>
+
+            <div>
+                <a href="/movies">
+                    Tous les films
+                </a>
+                <a href="/movies?order_by=startYear&order=asc">
+                    Les films les plus récents
+                </a>
+                <a href="/movies?order_by=averageRating&order=desc">
+                    Les films les mieux notés
+                </a>
+                <a href="/movies/random">
+                    Film aléatoire
+                </a>
+            </div>
+
+            <div>
+                <h3>Séries</h3>
+                <div>
+                    <a href="/series">
+                        Toutes les séries
+                    </a>
+                    <a href="/series?order_by=startYear&order=asc">
+                        Les séries les plus récentes
+                    </a>
+                    <a href="/series?order_by=averageRating&order=desc">
+                        Les séries les mieux notées
+                    </a>
+                </div>
+                <div class="wrapper">
+                    @foreach ($series as $series_item)
+                    <div>
+                        <a href="/series/{{ $series_item->id }}">
+                            <img src="{{ $series_item->poster }}" alt="{{ $series_item->primaryTitle }}" class="poster">
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
 
         <div class="wrapper">
             @foreach ($movies as $movie)
             <div>
                 <a href="/movies/{{ $movie->id }}">
-                    <img src="{{ $movie->poster }}" alt="{{ $movie->primaryTitle }}">
+                    <img src="{{ $movie->poster }}" alt="{{ $movie->primaryTitle }}" class="poster">
                 </a>
             </div>
             @endforeach

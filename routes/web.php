@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\GenreController;
 use App\Models\Movie;
+use App\Http\Controllers\SeriesController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Series;
 use App\Http\Controllers\MovieController;
 
 /*
@@ -17,11 +19,13 @@ use App\Http\Controllers\MovieController;
 */
 
 Route::get('/', function () {
-    $movies = Movie::inRandomOrder()->whereNotNull('poster')->limit(12)->get();
+    $movies = Movie::inRandomOrder()->whereNotNull('poster')->limit(5)->get();
+    $series = Series::inRandomOrder()->whereNotNull('poster')->limit(5)->get();
 
-    return view('home', ['movies' => $movies]);
+    return view('home', ['movies' => $movies, 'series' => $series]);
 });
 Route::get('/movies/random', [MovieController::class, 'random']);
 Route::get('/movies', [MovieController::class, 'list']);
 Route::get('/movies/{id}', [MovieController::class, 'show']);
+Route::get('/series', [SeriesController::class, 'list']);
 Route::get('/genres', [GenreController::class, 'list']);
