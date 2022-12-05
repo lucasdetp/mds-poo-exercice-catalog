@@ -28,4 +28,6 @@ Route::get('/movies/random', [MovieController::class, 'random']);
 Route::get('/movies', [MovieController::class, 'list']);
 Route::get('/movies/{id}', [MovieController::class, 'show']);
 Route::get('/series', [SeriesController::class, 'list']);
+Route::get('/series/random', [SeriesController::class, 'random']);
+Route::get('/series/{id}', [SeriesController::class, 'show']);
 Route::get('/genres', [GenreController::class, 'list']);

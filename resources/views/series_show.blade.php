@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $movie->originalTitle }}</title>
+    <title>{{ $series_item->originalTitle }}</title>
 
     <style>
         .container {
@@ -32,41 +32,40 @@
         </div>
 
         <div>
-            <img src="{{ $movie->poster }}" alt="{{ $movie->originalTitle }}">
+            <img src="{{ $series_item->poster }}" alt="{{ $series_item->originalTitle }}">
         </div>
 
         <h2>Détails</h2>
         <table>
             <tr>
-                <th>Titre</th>
-                <td>{{ $movie->primaryTitle }} ({{ $movie->originalTitle }})</td>
-            </tr>
+                <th>Titre :</th>
+                <td>{{ $series_item->primaryTitle }} ({{ $series_item->originalTitle }})</td>
             <tr>
-                <th>Genre</th>
+                <th>Genre :</th>
                 <td>
-                    @foreach ($movie->genres as $genre)
-                    <a href="/movies?genre={{ $genre->label }}">{{ $genre->label }}</a>
+                    @foreach ($series_item->genres as $genre)
+                    <a href="/series?genre={{ $genre->label }}">{{ $genre->label }}</a>
                     {{ $loop->last ? "" : "," }}
                     @endforeach
                 </td>
             </tr>
             <tr>
                 <th>Année de sortie :</th>
-                <td>{{ $movie->startYear }}</td>
+                <td>{{ $series_item->startYear }}</td>
             </tr>
             <tr>
                 <th>Durée :</th>
-                <td>{{ $movie->runtimeMinutes }} minutes</td>
+                <td>{{ $series_item->runtimeMinutes }} minutes</td>
             </tr>
             <tr>
                 <th>Note :</th>
-                <td>{{ $movie->averageRating }} ({{ $movie->numVotes }} votes)</td>
+                <td>{{ $series_item->averageRating }} ({{ $series_item->numVotes }} votes)</td>
             </tr>
         </table>
 
         <h2>Résumé</h2>
         <p>
-            {{ $movie->plot }}
+            {{ $series_item->plot }}
         </p>
     </div>
 </body>

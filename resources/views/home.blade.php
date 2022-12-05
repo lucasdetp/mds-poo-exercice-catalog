@@ -76,6 +76,15 @@
                     Film aléatoire
                 </a>
             </div>
+            <div class="wrapper">
+                @foreach ($movies as $movie)
+                <div>
+                    <a href="/movies/{{ $movie->id }}">
+                        <img src="{{ $movie->poster }}" alt="{{ $movie->primaryTitle }}" class="poster">
+                    </a>
+                </div>
+                @endforeach
+            </div>
 
             <div>
                 <h3>Séries</h3>
@@ -88,6 +97,9 @@
                     </a>
                     <a href="/series?order_by=averageRating&order=desc">
                         Les séries les mieux notées
+                    </a>
+                    <a href="/series/random">
+                        Série aléatoire
                     </a>
                 </div>
                 <div class="wrapper">
@@ -102,15 +114,7 @@
             </div>
         </div>
 
-        <div class="wrapper">
-            @foreach ($movies as $movie)
-            <div>
-                <a href="/movies/{{ $movie->id }}">
-                    <img src="{{ $movie->poster }}" alt="{{ $movie->primaryTitle }}" class="poster">
-                </a>
-            </div>
-            @endforeach
-        </div>
+
     </div>
 </body>
 
