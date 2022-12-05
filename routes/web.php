@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GenreController;
 use App\Models\Movie;
+use App\Models\Genre;
 use App\Http\Controllers\SeriesController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Series;

@@ -34,13 +34,6 @@
         a {
             text-decoration: none;
             margin-left: 30px;
-            text-align: center;
-
-
-            width: 40%;
-            padding-top: 2px;
-            padding-bottom: 0px;
-
         }
 
         h3 {
